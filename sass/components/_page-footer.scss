@@ -12,14 +12,13 @@
 }
 
 .logo-footer {
-  color: $primary-fon-color;
   @extend %logo-footerStyleTitle;
 }
 
 .footer-address {
   margin-top: 0px;
-
-  color: #ffffff;
+  @extend %features-styleTitle;
+  color: $primary-fon-color;
 }
 
 .footer-contact {
@@ -36,31 +35,34 @@
 
 .footer-link h3 {
   color: $primary-fon-color;
+}
 
-  & .item {
-    display: flex;
-  }
+.footer-link .item {
+  display: flex;
 }
 
 .footer-links {
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms $timeFunction;
   &:not(:last-child) {
     margin-right: 10px;
   }
-  &:hover *,
-  &:focus * {
-    background-color: var(--accent-color);
+
+  & .link-socials {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 
-.footer-links .link-socials {
-  background-color: rgba(255, 255, 255, 0.1);
+.footer-links:hover *,
+.footer-links:focus * {
+  background-color: $accent-color;
 }
 
 .footer-text {
-  color: #ffffff;
+  color: $primary-fon-color;
   margin-bottom: 0px;
 }
+
+// Форма  футера
 
 .input-form {
   width: 358px;
@@ -73,42 +75,24 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 20px;
-  color: rgba(255, 255, 255, 0.6);
+  @extend %input-formFooterStyleTitle;
 }
 
 .button-footer {
+  @extend %button;
   display: inline-flex;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  width: 200px;
   height: 50px;
   padding: 0px 28px 0px 29px;
-  border: none;
-  outline: none;
   border-radius: 4px;
-  cursor: pointer;
 
-  color: var(--primary-fon-color);
-  background-color: var(--accent-color);
-
-  font-family: Roboto;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.9;
-  text-align: center;
-  letter-spacing: 0.06rem;
-}
-
-.button-footer:hover,
-.button-footer:focus {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .tellegram-icon {
