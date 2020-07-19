@@ -66,7 +66,6 @@
   &:focus + .form-label,
   &:not(:placeholder-shown) + .form-label {
     transform: translate(-16px, -40px);
-
     color: $accent-color;
   }
   &:focus ~ .icon {
@@ -144,16 +143,16 @@
 
   border: 2px solid $title-text-color;
   border-radius: 2px;
-}
 
-.checkbox:checked + .icons {
-  background-color: $accent-color;
-  background-image: url("../images/main/Vectorcheck.svg");
-  background-size: contain;
-  background-origin: border-box;
-  border-color: $accent-color;
-  transition: background-color 250ms $timeFunction,
-    border-color 250ms $timeFunction;
+  .checkbox:checked + & {
+    background-color: $accent-color;
+    background-image: url("../images/main/Vectorcheck.svg");
+    background-size: contain;
+    background-origin: border-box;
+    border-color: $accent-color;
+    transition: background-color 250ms $timeFunction,
+      border-color 250ms $timeFunction;
+  }
 }
 
 .label-checkbox {
@@ -196,36 +195,28 @@
   cursor: pointer;
 
   transition: fill 250ms $timeFunction;
-}
 
-.close-modal:focus,
-.close-modal:hover {
-  fill: $accent-color;
+  &:focus,
+  &:hover {
+    fill: $accent-color;
+  }
 }
 
 .submit-button {
   position: absolute;
   margin-left: 134px;
-  min-width: 200px;
+
   min-height: 50px;
   padding: 10px 55px;
   border-radius: 4px;
-  cursor: pointer;
 
-  color: var(--primary-fon-color);
-  background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms $timeFunction;
 
-  font-family: Roboto;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.9;
-  text-align: center;
-  letter-spacing: 0.06rem;
-}
+  @extend %button;
 
-.submit-button:hover,
-.submit-button:focus {
-  background-color: $background-color-sub-button;
+  &:hover,
+  &:focus {
+    background-color: $background-color-sub-button;
+  }
 }
